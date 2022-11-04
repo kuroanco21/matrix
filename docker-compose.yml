@@ -14,7 +14,7 @@ services:
       # is it really required?
       - ./conf_nginx/dhparam:/etc/nginx/dhparam:ro
       - ./data_nginx:/usr/share/nginx/html:ro
-      - ./letsencrypt:/etc/letsencrypt:ro
+      - ./data_letsencrypt:/etc/letsencrypt:ro
       - ./log_nginx:/var/log/nginx
     networks:
       - matrix-server
@@ -25,8 +25,8 @@ services:
     container_name: certbot
     restart: always
     volumes:
-      - ./data_nginx:/usr/share/nginx/html
-      - ./letsencrypt:/etc/letsencrypt
+      - ./data_nginx:/usr/share/nginx/html:ro
+      - ./data_letsencrypt:/etc/letsencrypt
       - ./log_letsencrypt:/var/log/letsencrypt
     networks:
       - matrix-server
