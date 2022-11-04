@@ -1,6 +1,5 @@
 /conf_*/
 /data_*/
 /log_*/
-/letsencrypt/
 /secrets/
 /matrix_backup_*
