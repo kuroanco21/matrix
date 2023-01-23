@@ -25,7 +25,7 @@ services:
     container_name: certbot
     restart: always
     volumes:
-      - ./data_nginx:/usr/share/nginx/html:ro
+      - ./data_nginx:/usr/share/nginx/html
       - ./data_letsencrypt:/etc/letsencrypt
       - ./log_letsencrypt:/var/log/letsencrypt
     networks:
